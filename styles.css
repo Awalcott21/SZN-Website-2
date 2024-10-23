@@ -1,0 +1,851 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --dark-color: #f0f0f0;
+  /* Ocean blue */
+  --mid-dark: #e8ed55;
+  /* Sea breeze gray */
+  --light-color: #333333;
+  /* Soft sand */
+  --mid-light: #333333;
+  /* Sandy gray */
+  --shadow: #0004;
+  /* Slightly darker shadow 
+  --circle-rainbow: radial-gradient(circle at left top, #ede6bf, #ecc947, #cb5a31, #6f5d79, #4e779a) --noise-texture: url(https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png);
+  --gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv); */
+}
+
+html,
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: var(--dark-color);
+  background-image: var(--noise-texture);
+  background-blend-mode: overlay;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  font-weight: 1000;
+  font-size: 64px;
+  color: var(--light-color);
+}
+
+h2 {
+  margin: 0;
+  font-family: "Mulish", serif;
+  font-size: 16px;
+  color: var(--mid-light);
+}
+
+h3 {
+  margin: 0;
+  font-family: "Mulish", serif;
+  font-size: 16px;
+  color: var(--mid-light);
+}
+
+p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
+  width: 390px;
+  color: var(--mid-light);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  box-sizing: border-box;
+  margin: 30px 128px;
+  gap: 48px;
+  font-size: 25px;
+}
+
+a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Mulish", sans-serif;
+  color: var(--mid-light);
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:not(.buy, .buy-cta, .learn) {
+  width: 64px;
+}
+
+a:hover:not(.buy, .buy-cta, .learn) {
+  transition: all 0.2s ease-in-out;
+  font-weight: 900;
+  text-shadow: 0 0 8px var(--light-color);
+}
+
+.szn-container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  height: 580px;
+  width: 960px;
+  background-image: linear-gradient(-4deg,
+      var(--dark-color) 60.2%,
+      var(--mid-dark) 60.28%,
+      var(--mid-dark) 60.7%,
+      var(--dark-color) 60.78%,
+      var(--dark-color) 61.4%,
+      var(--mid-dark) 61.48%,
+      var(--mid-dark) 62.6%,
+      var(--dark-color) 62.68%,
+      var(--dark-color) 63.4%,
+      var(--mid-dark) 63.48%,
+      var(--mid-dark) 64.6%,
+      var(--dark-color) 64.68%,
+      var(--dark-color) 65.4%,
+      var(--mid-dark) 65.48%,
+      var(--mid-dark) 67.4%,
+      var(--dark-color) 67.48%,
+      var(--dark-color) 68.4%,
+      var(--mid-dark) 68.48%,
+      var(--mid-dark) 71.4%,
+      var(--dark-color) 71.48%,
+      var(--dark-color) 72.4%,
+      var(--mid-dark) 72.48%,
+      var(--mid-dark) 76.4%,
+      var(--dark-color) 76.48%,
+      var(--dark-color) 77.4%,
+      var(--mid-dark) 77.48%,
+      var(--mid-dark) 81.4%,
+      var(--dark-color) 81.48%,
+      var(--dark-color) 82.4%,
+      var(--mid-dark) 82.48%,
+      var(--mid-dark) 87.4%,
+      var(--dark-color) 87.48%);
+  box-sizing: border-box;
+  /*   scale:2; */
+  animation: spawn 2s ease-in-out forwards;
+}
+
+body {
+  background: #00b4ff;
+  color: #333;
+  font: 100% Arial, Sans Serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Cloud Container */
+#background-wrap {
+  bottom: 0;
+  left: 0;
+  padding-top: 50px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  /* Keeps the clouds behind your main content */
+}
+
+/* Cloud Animations */
+@-webkit-keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@-moz-keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+/* Cloud Classes */
+.x1 {
+  -webkit-animation: animateCloud 35s linear infinite;
+  -moz-animation: animateCloud 35s linear infinite;
+  animation: animateCloud 35s linear infinite;
+  -webkit-transform: scale(0.65);
+  -moz-transform: scale(0.65);
+  transform: scale(0.65);
+}
+
+.x2 {
+  -webkit-animation: animateCloud 20s linear infinite;
+  -moz-animation: animateCloud 20s linear infinite;
+  animation: animateCloud 20s linear infinite;
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  transform: scale(0.3);
+}
+
+.x3 {
+  -webkit-animation: animateCloud 30s linear infinite;
+  -moz-animation: animateCloud 30s linear infinite;
+  animation: animateCloud 30s linear infinite;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+.x4 {
+  -webkit-animation: animateCloud 18s linear infinite;
+  -moz-animation: animateCloud 18s linear infinite;
+  animation: animateCloud 18s linear infinite;
+  -webkit-transform: scale(0.4);
+  -moz-transform: scale(0.4);
+  transform: scale(0.4);
+}
+
+.x5 {
+  -webkit-animation: animateCloud 25s linear infinite;
+  -moz-animation: animateCloud 25s linear infinite;
+  animation: animateCloud 25s linear infinite;
+  -webkit-transform: scale(0.55);
+  -moz-transform: scale(0.55);
+  transform: scale(0.55);
+}
+
+/* Cloud Styles */
+.cloud {
+  background: #fff;
+  background: -moz-linear-gradient(top, #fff 5%, #f1f1f1 100%);
+  background: -webkit-linear-gradient(top, #fff 5%, #f1f1f1 100%);
+  background: -o-linear-gradient(top, #fff 5%, #f1f1f1 100%);
+  background: -ms-linear-gradient(top, #fff 5%, #f1f1f1 100%);
+  background: linear-gradient(to bottom, #fff 5%, #f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#f1f1f1', GradientType=0);
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+  height: 120px;
+  position: relative;
+  width: 350px;
+}
+
+.cloud:after,
+.cloud:before {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.cloud:after {
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  height: 100px;
+  left: 50px;
+  top: -50px;
+  width: 100px;
+}
+
+.cloud:before {
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
+  width: 180px;
+  height: 180px;
+  right: 50px;
+  top: -90px;
+}
+
+/* SZN Container Styles */
+.szn-container {
+  position: relative;
+  /* Position the container to layer with clouds */
+  z-index: 1;
+  /* Ensure content is above the clouds */
+}
+
+.szn-container:before {
+  content: "";
+  display: flex;
+  position: absolute;
+  background-image: var(--noise-texture);
+  height: 580px;
+  width: 960px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 3;
+  /* Overlay effect */
+}
+
+.szn-container:hover:after {
+  content: "";
+  display: flex;
+  position: absolute;
+  background-image: var(--gif-texture);
+  height: 580px;
+  width: 960px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 64%;
+  z-index: 3;
+  /* Hover effect */
+}
+
+
+.main-container {
+  padding: 0;
+  margin: auto;
+  display: grid;
+  height: 460px;
+  gap: 64px;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-sphere-container {
+  display: flex;
+  width: 125%;
+  gap: 128px;
+  align-items: center;
+}
+
+.buy {
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  border: 1px solid var(--mid-light);
+  height: 40px;
+  width: 128px;
+  transition: all 0.2s;
+}
+
+.buy:hover {
+  scale: 1.1;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border: 1px solid var(--light-color);
+}
+
+.buy-cta {
+  display: grid;
+  place-items: center;
+  color: var(--dark-color);
+  font-weight: 900;
+  background-image: linear-gradient(to right,
+      var(--light-color),
+      var(--light-color));
+  height: 40px;
+  width: 200px;
+  font-size: 16px;
+  transition: all 0.4s;
+}
+
+.buy-cta:hover {
+  scale: 1.1;
+  color: var(--light-color);
+  background-image: var(--linear-rainbow);
+  transition: all 0.2s;
+}
+
+/* Updated floating shirt container */
+.floating-shirt-container {
+  display: flex;
+  grid-template-columns: (4fr, 1);
+  gap: 270px;
+  justify-content: start;
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  left: -201px;
+  position: relative;
+  top: -60px;
+}
+
+.floating-shirt-link {
+  display: block;
+  text-align: center;
+}
+
+.floating-shirt {
+  width: 400px;
+  /* Adjust as necessary */
+  height: auto;
+  transition: transform 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+}
+
+.floating-shirt img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.floating-shirt:hover {
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-shirt-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Size Selector Styling */
+.size-selection {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.size-selection label {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #555;
+  font: "Playfair Display";
+}
+
+.size-selection select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  font: "Playfair Display";
+}
+
+.size-selection select:hover {
+  border-color: #aaa;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+.modal-details {
+  text-align: center;
+}
+
+/* Preorder Modal Heading */
+.preorder-heading {
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 0px;
+}
+
+.preorder-heading h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0c0c0c;
+  margin-bottom: 10px;
+}
+
+.preorder-heading h3 {
+  font-size: 1rem;
+  color: #0e0d0d;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Modal Styling for Customer Info Step */
+.modal-customer-info {
+  display: none;
+  /* Initially hidden, shown after 'Preorder' clicked */
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-customer-info.active {
+  display: block;
+  /* Show when the form is active */
+}
+
+
+/* Form Submit Button */
+.modal-customer-info button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* General styling for form inputs */
+.modal-customer-info input,
+.modal-customer-info select {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  /* Add more space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Labels for form inputs */
+.modal-customer-info label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  /* Space between label and input */
+  display: block;
+}
+
+/* Adjust margins for different form sections */
+.modal-customer-info .form-section {
+  margin-bottom: 25px;
+  /* More space between form sections */
+}
+
+/* Shipping Form Fields with extra spacing */
+.modal-customer-info #apartmentSuite {
+  margin-top: 10px;
+  /* Slightly closer to Street Address */
+}
+
+.modal-customer-info select {
+  margin-top: 10px;
+  /* More space above dropdown */
+}
+
+/* Button styling remains the same */
+.modal-customer-info button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* Optional: Styling for Error Messages */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: left;
+}
+
+
+.price-preorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font: "Playfair Display";
+}
+
+#shirtPrice {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 15px;
+  font: "Playfair Display";
+}
+
+.preorder-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.preorder-btn:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .floating-shirt-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .floating-shirt {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+/* clouds */
+body {
+  background: #65c2ea;
+  color: #333;
+  font: 100% Arial, Sans Serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#background-wrap {
+  bottom: 0;
+  left: 0;
+  padding-top: 50px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* KEYFRAMES */
+
+@-webkit-keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@-moz-keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes animateCloud {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 100%;
+  }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+  -webkit-animation: animateCloud 35s linear infinite;
+  -moz-animation: animateCloud 35s linear infinite;
+  animation: animateCloud 35s linear infinite;
+
+  -webkit-transform: scale(0.65);
+  -moz-transform: scale(0.65);
+  transform: scale(0.65);
+}
+
+.x2 {
+  -webkit-animation: animateCloud 20s linear infinite;
+  -moz-animation: animateCloud 20s linear infinite;
+  animation: animateCloud 20s linear infinite;
+
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  transform: scale(0.3);
+}
+
+.x3 {
+  -webkit-animation: animateCloud 30s linear infinite;
+  -moz-animation: animateCloud 30s linear infinite;
+  animation: animateCloud 30s linear infinite;
+
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+.x4 {
+  -webkit-animation: animateCloud 18s linear infinite;
+  -moz-animation: animateCloud 18s linear infinite;
+  animation: animateCloud 18s linear infinite;
+
+  -webkit-transform: scale(0.4);
+  -moz-transform: scale(0.4);
+  transform: scale(0.4);
+}
+
+.x5 {
+  -webkit-animation: animateCloud 25s linear infinite;
+  -moz-animation: animateCloud 25s linear infinite;
+  animation: animateCloud 25s linear infinite;
+
+  -webkit-transform: scale(0.55);
+  -moz-transform: scale(0.55);
+  transform: scale(0.55);
+}
+
+/* Footer Styles */
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Mulish', sans-serif;
+  color: #fff;
+  margin-bottom: -40px;
+}
+
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+  
+}
+
+.footer-links a:active {
+  color: #ddd;
+  
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  /* Styles for tablets and smaller screens */
+  .main-container {
+    padding: 10px;
+    /* Adjust padding */
+  }
+
+  .text-container h1 {
+    font-size: 1.5rem;
+    /* Reduce font size for mobile */
+  }
+
+  .text-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .text-container h3 {
+    font-size: 1rem;
+  }
+
+  .szn-container {
+    width: 100%;
+    /* Make it fill the width of mobile screens */
+    height: auto;
+  }
+
+  .cloud {
+    width: 300px;
+    /* Adjust cloud sizes */
+    height: 100px;
+  }
+}
+
