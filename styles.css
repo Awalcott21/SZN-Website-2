@@ -534,21 +534,18 @@ body {
 }
 
 /* Modal Styling for Customer Info Step */
-.modal-customer-info {
-  display: none;
-  /* Initially hidden, shown after 'Preorder' clicked */
+#customer-details-section {
   margin-top: 20px;
   text-align: center;
+  display: none; /* Initially hidden */
 }
 
-.modal-customer-info.active {
+#customer-details-section.active {
   display: block;
-  /* Show when the form is active */
 }
-
 
 /* Form Submit Button */
-.modal-customer-info button {
+#customer-details-form button {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
@@ -560,45 +557,45 @@ body {
 }
 
 /* General styling for form inputs */
-.modal-customer-info input,
-.modal-customer-info select {
+#customer-details-form input,
+#customer-details-form select {
   width: 100%;
   padding: 12px;
   margin: 15px 0;
-  /* Add more space between inputs */
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 /* Labels for form inputs */
-.modal-customer-info label {
+#customer-details-form label {
   font-size: 1rem;
   color: #333;
   margin-bottom: 8px;
-  /* Space between label and input */
   display: block;
 }
 
 /* Adjust margins for different form sections */
-.modal-customer-info .form-section {
+#customer-details-form .form-section {
   margin-bottom: 25px;
-  /* More space between form sections */
 }
 
 /* Shipping Form Fields with extra spacing */
-.modal-customer-info #apartmentSuite {
+#customer-details-form #apartmentSuite {
   margin-top: 10px;
-  /* Slightly closer to Street Address */
 }
 
-.modal-customer-info select {
+#customer-details-form select {
   margin-top: 10px;
-  /* More space above dropdown */
 }
 
-/* Button styling remains the same */
-.modal-customer-info button {
+/* Payment form styling */
+#payment-form {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+#payment-form button {
   width: 100%;
   padding: 12px;
   margin-top: 25px;
@@ -608,6 +605,12 @@ body {
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+/* Button hover effects */
+#customer-details-form button:hover,
+#payment-form button:hover {
+  background-color: #0056b3;
 }
 
 

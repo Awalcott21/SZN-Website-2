@@ -62,20 +62,19 @@
         </a>
     </div>
 
-    <!-- Modal for Shirt 1 -->
     <div id="shirt1Modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('shirt1Modal')">&times;</span>
 
             <!-- First Section: Product Information -->
-            <div id="product-section">
+            <div id="product-section-1" class="product-section">
                 <img src="GiesWhite (1).png" alt="Shirt 1" class="modal-shirt-img">
                 <div class="modal-details">
                     <h3>Lord, Do Not Let Me Give Up</h3>
                     <p>100% Cotton, 190 GSM, PreShrunk, True to Size, Not Boxy or Oversized.</p>
                     <div class="size-selection">
-                        <label for="shirtSize">Select Size:</label>
-                        <select id="shirtSize">
+                        <label for="shirtSize-1">Select Size:</label>
+                        <select id="shirtSize-1">
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -83,64 +82,59 @@
                         </select>
                     </div>
                     <div class="price-preorder">
-                        <span id="shirtPrice">$50</span>
-                        <button class="preorder-btn" onclick="showCustomerDetails()">Pre-order</button>
+                        <span id="shirtPrice-1">$50</span>
+                        <button class="preorder-btn" onclick="showCustomerDetails('1')">Pre-order</button>
                     </div>
                 </div>
             </div>
 
-
-            <!-- Second Section: Customer Details (Initially Hidden) -->
-            <div id="customer-details-section" style="display:none;">
+            <!-- Second Section: Customer Details -->
+            <div id="customer-details-section-1" class="customer-details-section" style="display:none;">
                 <h3>Fill-er Out</h3>
-                <form id="customer-details-form">
-                    <label for="customerName">Name:</label>
-                    <input type="text" id="customerName" name="customerName" required>
+                <form id="customer-details-form-1" class="customer-details-form">
+                    <label for="customerName-1">Name:</label>
+                    <input type="text" id="customerName-1" name="customerName" required>
                     <br>
 
-                    <label for="customerPhone">Phone:</label>
-                    <input type="tel" id="customerPhone" name="customerPhone" required>
+                    <label for="customerPhone-1">Phone:</label>
+                    <input type="tel" id="customerPhone-1" name="customerPhone" required>
                     <br>
-                    <label for="customerEmail">Email:</label>
-                    <input type="email" id="customerEmail" name="customerEmail" required>
+                    <label for="customerEmail-1">Email:</label>
+                    <input type="email" id="customerEmail-1" name="customerEmail" required>
                     <br>
-                    <label for="streetAddress">Street Address:</label>
-                    <input type="text" id="streetAddress" name="streetAddress" placeholder="123 Main St" required>
+                    <label for="streetAddress-1">Street Address:</label>
+                    <input type="text" id="streetAddress-1" name="streetAddress" placeholder="123 Main St" required>
                     <br>
-                    <label for="apartmentSuite">Apartment, Suite, etc. (optional):</label>
-                    <input type="text" id="apartmentSuite" name="apartmentSuite" placeholder="Apt, Suite, etc.">
+                    <label for="apartmentSuite-1">Apartment, Suite, etc. (optional):</label>
+                    <input type="text" id="apartmentSuite-1" name="apartmentSuite" placeholder="Apt, Suite, etc.">
                     <br>
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city" placeholder="City" required>
+                    <label for="city-1">City:</label>
+                    <input type="text" id="city-1" name="city" placeholder="City" required>
                     <br>
-                    <label for="state">State/Province/Region:</label>
-                    <input type="text" id="state" name="state" placeholder="State" required>
+                    <label for="state-1">State/Province/Region:</label>
+                    <input type="text" id="state-1" name="state" placeholder="State" required>
                     <br>
-                    <label for="zipCode">Zip/Postal Code:</label>
-                    <input type="text" id="zipCode" name="zipCode" placeholder="12345" required>
+                    <label for="zipCode-1">Zip/Postal Code:</label>
+                    <input type="text" id="zipCode-1" name="zipCode" placeholder="12345" required>
                     <br>
-                    <label for="country">Country:</label>
-                    <select id="country" name="country" required>
+                    <label for="country-1">Country:</label>
+                    <select id="country-1" name="country" required>
                         <option value="">Select Country</option>
                         <option value="US">United States</option>
-                        <!-- Add other countries as needed -->
                     </select>
 
-                    <button type="button" onclick="showPaymentSection()">Next: Payment Method</button>
+                    <button type="button" onclick="showPaymentSection('1')">Next: Payment Method</button>
                 </form>
             </div>
 
-            <form action="/charge" method="post" id="payment-form" style="display:none;">
+            <form action="/charge" method="post" id="payment-form-1" class="payment-form" style="display:none;">
                 <div class="form-row">
-                    <label for="card-element">Credit or debit card</label>
-                    <div id="card-element">
+                    <label for="card-element-1">Credit or debit card</label>
+                    <div id="card-element-1">
                         <!-- A Stripe Element will be inserted here. -->
                     </div>
-
-                    <!-- Used to display Element errors. -->
-                    <div id="card-errors" role="alert"></div>
+                    <div id="card-errors-1" role="alert"></div>
                 </div>
-
                 <button>Submit Payment</button>
             </form>
         </div>
@@ -152,14 +146,14 @@
             <span class="close-btn" onclick="closeModal('shirt2Modal')">&times;</span>
 
             <!-- First Section: Product Information -->
-            <div id="product-section">
+            <div id="product-section-2" class="product-section">
                 <img src="ANSwhite.png" alt="Shirt 2" class="modal-shirt-img">
                 <div class="modal-details">
                     <h3>Ain't No Sunshine If You're Gone</h3>
                     <p>100% Cotton, 190 GSM, PreShrunk, True to Size, Not Boxy or Oversized.</p>
                     <div class="size-selection">
-                        <label for="shirtSize">Select Size:</label>
-                        <select id="shirtSize">
+                        <label for="shirtSize-2">Select Size:</label>
+                        <select id="shirtSize-2">
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -167,255 +161,235 @@
                         </select>
                     </div>
                     <div class="price-preorder">
-                        <span id="shirtPrice">$50</span>
-                        <button class="preorder-btn" onclick="showCustomerDetails()">Pre-order</button>
+                        <span id="shirtPrice-2">$50</span>
+                        <button class="preorder-btn" onclick="showCustomerDetails('2')">Pre-order</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Second Section: Customer Details (Initially Hidden) -->
-            <div id="customer-details-section" style="display:none;">
+            <!-- Second Section: Customer Details -->
+            <div id="customer-details-section-2" class="customer-details-section" style="display:none;">
                 <h3>Fill-er Out</h3>
-                <form id="customer-details-form">
-                    <label for="customerName">Name:</label>
-                    <input type="text" id="customerName" name="customerName" required>
+                <form id="customer-details-form-2" class="customer-details-form">
+                    <label for="customerName-2">Name:</label>
+                    <input type="text" id="customerName-2" name="customerName" required>
                     <br>
 
-                    <label for="customerPhone">Phone:</label>
-                    <input type="tel" id="customerPhone" name="customerPhone" required>
+                    <label for="customerPhone-2">Phone:</label>
+                    <input type="tel" id="customerPhone-2" name="customerPhone" required>
                     <br>
-                    <label for="customerEmail">Email:</label>
-                    <input type="email" id="customerEmail" name="customerEmail" required>
+                    <label for="customerEmail-2">Email:</label>
+                    <input type="email" id="customerEmail-2" name="customerEmail" required>
                     <br>
-                    <label for="streetAddress">Street Address:</label>
-                    <input type="text" id="streetAddress" name="streetAddress" placeholder="123 Main St" required>
+                    <label for="streetAddress-2">Street Address:</label>
+                    <input type="text" id="streetAddress-2" name="streetAddress" placeholder="123 Main St" required>
                     <br>
-                    <label for="apartmentSuite">Apartment, Suite, etc. (optional):</label>
-                    <input type="text" id="apartmentSuite" name="apartmentSuite" placeholder="Apt, Suite, etc.">
+                    <label for="apartmentSuite-2">Apartment, Suite, etc. (optional):</label>
+                    <input type="text" id="apartmentSuite-2" name="apartmentSuite" placeholder="Apt, Suite, etc.">
                     <br>
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city" placeholder="City" required>
+                    <label for="city-2">City:</label>
+                    <input type="text" id="city-2" name="city" placeholder="City" required>
                     <br>
-                    <label for="state">State/Province/Region:</label>
-                    <input type="text" id="state" name="state" placeholder="State" required>
+                    <label for="state-2">State/Province/Region:</label>
+                    <input type="text" id="state-2" name="state" placeholder="State" required>
                     <br>
-                    <label for="zipCode">Zip/Postal Code:</label>
-                    <input type="text" id="zipCode" name="zipCode" placeholder="12345" required>
+                    <label for="zipCode-2">Zip/Postal Code:</label>
+                    <input type="text" id="zipCode-2" name="zipCode" placeholder="12345" required>
                     <br>
-                    <label for="country">Country:</label>
-                    <select id="country" name="country" required>
+                    <label for="country-2">Country:</label>
+                    <select id="country-2" name="country" required>
                         <option value="">Select Country</option>
                         <option value="US">United States</option>
-                        <!-- Add other countries as needed -->
                     </select>
 
-                    <button type="button" onclick="showPaymentSection()">Next: Payment Method</button>
+                    <button type="button" onclick="showPaymentSection('2')">Next: Payment Method</button>
                 </form>
             </div>
 
-            <form action="/charge" method="post" id="payment-form" style="display:none;">
+            <form action="/charge" method="post" id="payment-form-2" class="payment-form" style="display:none;">
                 <div class="form-row">
-                    <label for="card-element">Credit or debit card</label>
-                    <div id="card-element">
+                    <label for="card-element-2">Credit or debit card</label>
+                    <div id="card-element-2">
                         <!-- A Stripe Element will be inserted here. -->
                     </div>
-
-                    <!-- Used to display Element errors. -->
-                    <div id="card-errors" role="alert"></div>
+                    <div id="card-errors-2" role="alert"></div>
                 </div>
-
                 <button>Submit Payment</button>
             </form>
         </div>
     </div>
-</div>
 
 
 
-<!-- Modal for Shirt 3 -->
-<div id="shirt3Modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('shirt3Modal')">&times;</span>
+    <!-- Modal for Shirt 3 -->
+    <div id="shirt3Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('shirt3Modal')">&times;</span>
 
-        <!-- First Section: Product Information -->
-        <div id="product-section">
-            <img src="ANSblack.png" alt="Shirt 3" class="modal-shirt-img">
-            <div class="modal-details">
-                <h3>Ain't No Sunshine If You're Gone Black</h3>
-                <p>100% Cotton, 190 GSM, PreShrunk, True to Size, Not Boxy or Oversized.</p>
-                <div class="size-selection">
-                    <label for="shirtSize">Select Size:</label>
-                    <select id="shirtSize">
-                        <option value="S">Small</option>
-                        <option value="M">Medium</option>
-                        <option value="L">Large</option>
-                        <option value="XL">Extra Large</option>
-                    </select>
-                </div>
-                <div class="price-preorder">
-                    <span id="shirtPrice">$50</span>
-                    <button class="preorder-btn" onclick="showCustomerDetails()">Pre-order</button>
+            <!-- First Section: Product Information -->
+            <div id="product-section-3" class="product-section">
+                <img src="ANSblack.png" alt="Shirt 3" class="modal-shirt-img">
+                <div class="modal-details">
+                    <h3>Ain't No Sunshine If You're Gone Black</h3>
+                    <p>100% Cotton, 190 GSM, PreShrunk, True to Size, Not Boxy or Oversized.</p>
+                    <div class="size-selection">
+                        <label for="shirtSize-3">Select Size:</label>
+                        <select id="shirtSize-3">
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">Extra Large</option>
+                        </select>
+                    </div>
+                    <div class="price-preorder">
+                        <span id="shirtPrice-3">$50</span>
+                        <button class="preorder-btn" onclick="showCustomerDetails('3')">Pre-order</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Second Section: Customer Details (Initially Hidden) -->
-        <div id="customer-details-section" style="display:none;">
-            <h3>Fill-er Out</h3>
-            <form id="customer-details-form">
-                <label for="customerName">Name:</label>
-                <input type="text" id="customerName" name="customerName" required>
-                <br>
+            <!-- Second Section: Customer Details -->
+            <div id="customer-details-section-3" class="customer-details-section" style="display:none;">
+                <h3>Fill-er Out</h3>
+                <form id="customer-details-form-3" class="customer-details-form">
+                    <label for="customerName-3">Name:</label>
+                    <input type="text" id="customerName-3" name="customerName" required>
+                    <br>
 
-                <label for="customerPhone">Phone:</label>
-                <input type="tel" id="customerPhone" name="customerPhone" required>
-                <br>
-                <label for="customerEmail">Email:</label>
-                <input type="email" id="customerEmail" name="customerEmail" required>
-                <br>
-                <label for="streetAddress">Street Address:</label>
-                <input type="text" id="streetAddress" name="streetAddress" placeholder="123 Main St" required>
-                <br>
-                <label for="apartmentSuite">Apartment, Suite, etc. (optional):</label>
-                <input type="text" id="apartmentSuite" name="apartmentSuite" placeholder="Apt, Suite, etc.">
-                <br>
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="City" required>
-                <br>
-                <label for="state">State/Province/Region:</label>
-                <input type="text" id="state" name="state" placeholder="State" required>
-                <br>
-                <label for="zipCode">Zip/Postal Code:</label>
-                <input type="text" id="zipCode" name="zipCode" placeholder="12345" required>
-                <br>
-                <label for="country">Country:</label>
-                <select id="country" name="country" required>
-                    <option value="">Select Country</option>
-                    <option value="US">United States</option>
-                    <!-- Add other countries as needed -->
-                </select>
+                    <label for="customerPhone-3">Phone:</label>
+                    <input type="tel" id="customerPhone-3" name="customerPhone" required>
+                    <br>
+                    <label for="customerEmail-3">Email:</label>
+                    <input type="email" id="customerEmail-3" name="customerEmail" required>
+                    <br>
+                    <label for="streetAddress-3">Street Address:</label>
+                    <input type="text" id="streetAddress-3" name="streetAddress" placeholder="123 Main St" required>
+                    <br>
+                    <label for="apartmentSuite-3">Apartment, Suite, etc. (optional):</label>
+                    <input type="text" id="apartmentSuite-3" name="apartmentSuite" placeholder="Apt, Suite, etc.">
+                    <br>
+                    <label for="city-3">City:</label>
+                    <input type="text" id="city-3" name="city" placeholder="City" required>
+                    <br>
+                    <label for="state-3">State/Province/Region:</label>
+                    <input type="text" id="state-3" name="state" placeholder="State" required>
+                    <br>
+                    <label for="zipCode-3">Zip/Postal Code:</label>
+                    <input type="text" id="zipCode-3" name="zipCode" placeholder="12345" required>
+                    <br>
+                    <label for="country-3">Country:</label>
+                    <select id="country-3" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                    </select>
 
+                    <button type="button" onclick="showPaymentSection('3')">Next: Payment Method</button>
+                </form>
+            </div>
 
-                <button type="button" onclick="showPaymentSection()">Next: Payment Method</button>
+            <form action="/charge" method="post" id="payment-form-3" class="payment-form" style="display:none;">
+                <div class="form-row">
+                    <label for="card-element-3">Credit or debit card</label>
+                    <div id="card-element-3">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                    <div id="card-errors-3" role="alert"></div>
+                </div>
+                <button>Submit Payment</button>
             </form>
         </div>
-
-        <form action="/charge" method="post" id="payment-form">
-            <div class="form-row">
-                <label for="card-element">
-                    Credit or debit card
-                </label>
-                <div id="card-element">
-                    <!-- A Stripe Element will be inserted here. -->
-                </div>
-
-                <!-- Used to display Element errors. -->
-                <div id="card-errors" role="alert"></div>
-            </div>
-
-            <button>Submit Payment</button>
-        </form>
-
-
-
     </div>
-</div>
 
+    <!-- Modal for Shirt 4 -->
+    <div id="shirt4Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('shirt4Modal')">&times;</span>
 
-<!-- Modal for Shirt 4 -->
-<div id="shirt4Modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('shirt4Modal')">&times;</span>
-
-        <!-- First Section: Product Information -->
-        <div id="product-section">
-            <img src="DNGU.png" alt="Shirt 4" class="modal-shirt-img">
-            <div class="modal-details">
-                <h3>Lord, do not let me give up in this SZN</h3>
-                <p>100% Cotton, 190 GSM, PreShrunk, True to Size, Not Boxy or Oversized.</p>
-                <div class="size-selection">
-                    <label for="shirtSize">Select Size:</label>
-                    <select id="shirtSize">
-                        <option value="S">Small</option>
-                        <option value="M">Medium</option>
-                        <option value="L">Large</option>
-                        <option value="XL">Extra Large</option>
-                    </select>
-                </div>
-                <div class="price-preorder">
-                    <span id="shirtPrice">$50</span>
-                    <button class="preorder-btn" onclick="showCustomerDetails()">Pre-order</button>
+            <!-- First Section: Product Information -->
+            <div id="product-section-4" class="product-section">
+                <img src="DNGU.png" alt="Shirt 4" class="modal-shirt-img">
+                <div class="modal-details">
+                    <h3>Lord, do not let me give up in this SZN</h3>
+                    <p>100% Cotton, 190 GSM, PreShrunk, True to Size, Not Boxy or Oversized.</p>
+                    <div class="size-selection">
+                        <label for="shirtSize-4">Select Size:</label>
+                        <select id="shirtSize-4">
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">Extra Large</option>
+                        </select>
+                    </div>
+                    <div class="price-preorder">
+                        <span id="shirtPrice-4">$50</span>
+                        <button class="preorder-btn" onclick="showCustomerDetails('4')">Pre-order</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Second Section: Customer Details (Initially Hidden) -->
-        <div id="customer-details-section" style="display:none;">
-            <h3>Fill-er Out</h3>
-            <form id="customer-details-form">
-                <label for="customerName">Name:</label>
-                <input type="text" id="customerName" name="customerName" required>
-                <br>
+            <!-- Second Section: Customer Details -->
+            <div id="customer-details-section-4" class="customer-details-section" style="display:none;">
+                <h3>Fill-er Out</h3>
+                <form id="customer-details-form-4" class="customer-details-form">
+                    <label for="customerName-4">Name:</label>
+                    <input type="text" id="customerName-4" name="customerName" required>
+                    <br>
 
-                <label for="customerPhone">Phone:</label>
-                <input type="tel" id="customerPhone" name="customerPhone" required>
-                <br>
-                <label for="customerEmail">Email:</label>
-                <input type="email" id="customerEmail" name="customerEmail" required>
-                <br>
-                <label for="streetAddress">Street Address:</label>
-                <input type="text" id="streetAddress" name="streetAddress" placeholder="123 Main St" required>
-                <br>
-                <label for="apartmentSuite">Apartment, Suite, etc. (optional):</label>
-                <input type="text" id="apartmentSuite" name="apartmentSuite" placeholder="Apt, Suite, etc.">
-                <br>
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="City" required>
-                <br>
-                <label for="state">State/Province/Region:</label>
-                <input type="text" id="state" name="state" placeholder="State" required>
-                <br>
-                <label for="zipCode">Zip/Postal Code:</label>
-                <input type="text" id="zipCode" name="zipCode" placeholder="12345" required>
-                <br>
-                <label for="country">Country:</label>
-                <select id="country" name="country" required>
-                    <option value="">Select Country</option>
-                    <option value="US">United States</option>
-                    <!-- Add other countries as needed -->
-                </select>
+                    <label for="customerPhone-4">Phone:</label>
+                    <input type="tel" id="customerPhone-4" name="customerPhone" required>
+                    <br>
+                    <label for="customerEmail-4">Email:</label>
+                    <input type="email" id="customerEmail-4" name="customerEmail" required>
+                    <br>
+                    <label for="streetAddress-4">Street Address:</label>
+                    <input type="text" id="streetAddress-4" name="streetAddress" placeholder="123 Main St" required>
+                    <br>
+                    <label for="apartmentSuite-4">Apartment, Suite, etc. (optional):</label>
+                    <input type="text" id="apartmentSuite-4" name="apartmentSuite" placeholder="Apt, Suite, etc.">
+                    <br>
+                    <label for="city-4">City:</label>
+                    <input type="text" id="city-4" name="city" placeholder="City" required>
+                    <br>
+                    <label for="state-4">State/Province/Region:</label>
+                    <input type="text" id="state-4" name="state" placeholder="State" required>
+                    <br>
+                    <label for="zipCode-4">Zip/Postal Code:</label>
+                    <input type="text" id="zipCode-4" name="zipCode" placeholder="12345" required>
+                    <br>
+                    <label for="country-4">Country:</label>
+                    <select id="country-4" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                    </select>
 
-                <button type="button" onclick="showPaymentSection()">Next: Payment Method</button>
+                    <button type="button" onclick="showPaymentSection('4')">Next: Payment Method</button>
+                </form>
+            </div>
+
+            <form action="/charge" method="post" id="payment-form-4" class="payment-form" style="display:none;">
+                <div class="form-row">
+                    <label for="card-element-4">Credit or debit card</label>
+                    <div id="card-element-4">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                    <div id="card-errors-4" role="alert"></div>
+                </div>
+                <button>Submit Payment</button>
             </form>
         </div>
-
-        <form action="/charge" method="post" id="payment-form" style="display:none;">
-            <div class="form-row">
-                <label for="card-element">Credit or debit card</label>
-                <div id="card-element">
-                    <!-- A Stripe Element will be inserted here. -->
-                </div>
-
-                <!-- Used to display Element errors. -->
-                <div id="card-errors" role="alert"></div>
-            </div>
-
-            <button>Submit Payment</button>
-        </form>
     </div>
-</div>
 
-<footer class="footer">
-    <div class="footer-links">
-        <a href="faq.html">FAQ</a>
-        <a href="shippingpolicy.html">Shipping Policy</a>
-        <a href="return-policy.html">Return Policy</a>
-      </div>
-    
-<p>&copy; Designed By Alex Walcott. All rights reserved.</p>
-</footer>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="faq.html">FAQ</a>
+            <a href="shippingpolicy.html">Shipping Policy</a>
+            <a href="return-policy.html">Return Policy</a>
+        </div>
 
-<script src="app.js"></script>
-<script src="https://js.stripe.com/v3/"></script>
+        <p>&copy; Designed By Alex Walcott. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
 </html>
